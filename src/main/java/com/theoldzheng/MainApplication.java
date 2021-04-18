@@ -1,5 +1,7 @@
 package com.theoldzheng;
 
+import com.theoldzheng.bean.Car;
+import com.theoldzheng.bean.Pet;
 import com.theoldzheng.bean.User;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -23,11 +25,16 @@ public class MainApplication {
             System.out.println(beanDefinitionName);
         }
 
-        User user = run.getBean("user", User.class);
-        User user1 = run.getBean("user", User.class);
-        System.out.println("user == user1 ?" + (user == user1));  //true 默认配置的情况下返回的都是单例对象
+//        User user = run.getBean("user", User.class);
+//        User user1 = run.getBean("user", User.class);
+//        System.out.println("user == user1 ?" + (user == user1));  //true 默认配置的情况下返回的都是单例对象
+        User hh = run.getBean("hh", User.class);
+        System.out.println(hh);
+        Pet pp = run.getBean("pp", Pet.class);
+        System.out.println(pp);
 
-
+        Car car = run.getBean("mycar-com.theoldzheng.bean.Car", Car.class);
+        System.out.println(car);
 
     }
 }
