@@ -5,6 +5,7 @@ import com.theoldzheng.bean.Pet;
 import com.theoldzheng.bean.User;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.web.servlet.WebMvcProperties;
 import org.springframework.context.ConfigurableApplicationContext;
 
 /**
@@ -35,6 +36,11 @@ public class MainApplication {
 
         Car car = run.getBean("mycar-com.theoldzheng.bean.Car", Car.class);
         System.out.println(car);
+        System.out.println("************");
+        String[] beanNamesForType = run.getBeanNamesForType(WebMvcProperties.class);
+        for (String s : beanNamesForType) {
+            System.out.println(s);
+        }
 
     }
 }
