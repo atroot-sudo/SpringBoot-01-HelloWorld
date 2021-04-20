@@ -1,8 +1,10 @@
 package com.theoldzheng;
 
 import com.theoldzheng.bean.Car;
+import com.theoldzheng.bean.Person;
 import com.theoldzheng.bean.Pet;
 import com.theoldzheng.bean.User;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.web.servlet.WebMvcProperties;
@@ -16,6 +18,8 @@ import org.springframework.context.ConfigurableApplicationContext;
  */
 @SpringBootApplication  //声明这是一个SpringBoot应用
 public class MainApplication {
+
+
     public static void main(String[] args) {
         //返回IOC容器
         ConfigurableApplicationContext run = SpringApplication.run(MainApplication.class, args);

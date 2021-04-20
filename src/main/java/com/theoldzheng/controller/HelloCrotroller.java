@@ -1,6 +1,7 @@
 package com.theoldzheng.controller;
 
 import com.theoldzheng.bean.Car;
+import com.theoldzheng.bean.Person;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -19,6 +20,9 @@ public class HelloCrotroller {
     @Autowired
     Car car;
 
+    @Autowired
+    Person person;
+
     @RequestMapping(value = "/car")
     public Car getCar(){
         return car;
@@ -27,5 +31,10 @@ public class HelloCrotroller {
     @RequestMapping(value = "/hello")
     public String hello() {
         return "hello world";
+    }
+
+    @RequestMapping(value = "/person")
+    public Person person(){
+        return person;
     }
 }

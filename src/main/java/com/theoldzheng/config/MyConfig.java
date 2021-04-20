@@ -1,6 +1,7 @@
 package com.theoldzheng.config;
 
 import com.theoldzheng.bean.Car;
+import com.theoldzheng.bean.Person;
 import com.theoldzheng.bean.Pet;
 import com.theoldzheng.bean.User;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
@@ -22,7 +23,7 @@ import org.springframework.context.annotation.ImportResource;
  */
 @Configuration(proxyBeanMethods = true)          //告诉SpringBoot这是一个配置类--- 与配置文件等效
 @ImportResource("classpath:bean.xml")
-@EnableConfigurationProperties(Car.class)
+@EnableConfigurationProperties({Car.class, Person.class})
 public class MyConfig {
     @Bean //将组件放入容器中，并且默认以方法名作为其id，返回的对象即为在容器中的实例
     public User user() {
